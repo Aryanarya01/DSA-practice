@@ -125,8 +125,5 @@ int main(){
     cout<<*(ptr+3)<<endl;
     ptr++;
     cout<<*ptr;
-
-
-
     return 0;
 }
