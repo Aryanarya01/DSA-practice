@@ -156,30 +156,187 @@
 //  }
 
 
+// #include<iostream>
+// #include<vector>
+// #include<stack>
+// using namespace std;
+
+
+// int main(){
+//     stack<int> s;
+
+//     s.push(1);
+//     s.push(2);
+//     s.push(3);
+//     // cout<<"top :"<<s.top()<<endl;
+
+//     // while(!s.empty()){
+//     //     cout<<s.top()<<" ";
+//     //     s.pop();
+//     // }
+//     // cout<<endl;
+
+
+//     stack<int> s1;
+//     s1.swap(s);
+//     cout<<"s size"<<s.size()<<endl;
+//     cout<<"s1 size"<<s1.size()<<endl;
+//     return 0;
+// }
+
+
+//    queue
+
+// #include<iostream>
+// #include<vector>
+// #include<queue>
+// using namespace std;
+
+// int main(){
+
+//     queue<int> q;
+//     q.push(1);
+//     q.push(2);
+//     q.push(3);
+
+//     while(!q.empty()){
+//         cout<<q.front()<<" ";
+//         q.pop();
+//     }
+//     cout<<endl;
+
+//     return 0;
+// }
+
+
+//    priority queuee
+
+
+
+// #include<iostream>
+// #include<vector>
+// #include<queue>
+// using namespace std;
+
+// int main(){
+
+//     priority_queue<int, vector<int>, greater<int>> q;
+//     q.push(5);
+//     q.push(3);
+//     q.push(10);
+//     q.push(2);
+
+//     while(!q.empty()){
+//         cout<<q.top()<<" ";
+//         q.pop();
+//     }
+//     cout<<endl;
+
+//     return 0;
+// }
+
+
+// /                       map
+
+
+// #include<iostream>
+// #include<vector>
+// #include<map>
+// #include<unordered_map>
+// using namespace std;
+
+
+// int main(){
+//     map<string, int> m;
+//     m["tv"] = 100;
+//     m["laptop"] = 100;
+//     m["headphones"] = 50;
+
+//     m.insert({"camera",50});
+
+//     for(auto p: m){
+//         cout<<p.first<<" "<<p.second<<endl;
+//     }
+// //    cout<<"count = "<<m["laptop"]<<endl;
+// if(m.find("hp")!= m.end()){
+//     cout<<"found\n";
+// }else{
+//     cout<<"not found\n";
+// }
+//     return 0;
+
+
+//    multimap<string, int> m;
+//      m.emplace("tv",100);
+//       m.emplace("tv",100);
+//        m.emplace("tv",100);
+//         m.emplace("tv",100);
+
+//     m.erase(m.find("tv"));
+
+//     for(auto p: m){
+//         cout<<p.first<<" "<<p.second<<endl;
+//     }
+ 
+//     return 0;
+// }
+
+//                    set
+
+// #include<iostream>
+// #include<vector>
+// #include<set>
+// #include<unordered_set>
+// using namespace std;
+
+
+// int main(){
+    
+//     unordered_set<int> s;
+//     s.insert(1);
+//     s.insert(2);
+//     s.insert(3);
+//     s.insert(4);
+//     s.insert(5);
+
+//     for(auto val : s){
+//         cout<<val<<" ";
+//     }
+//     cout<<endl;
+//     return 0;
+// }
+
+
+
+//                             algorithm - sorting
+
 #include<iostream>
 #include<vector>
-#include<stack>
+#include<algorithm>
+
 using namespace std;
 
+bool compartor(pair<int,int> p1,pair<int,int> p2){
+    if(p1.second<p2.second) return true;
+    
+    if(p1.second>p2.second) return false;
+    if(p1.first<p2.first) return true;
+    else return false;
+}
 
 int main(){
-    stack<int> s;
-
-    s.push(1);
-    s.push(2);
-    s.push(3);
-    // cout<<"top :"<<s.top()<<endl;
-
-    // while(!s.empty()){
-    //     cout<<s.top()<<" ";
-    //     s.pop();
+    // int arr[5] = {3,2,5,6,1};
+    // sort(arr,arr+5,greater<int>());
+    // for(int val : arr){
+    //     cout<<val<<" ";
     // }
     // cout<<endl;
 
+    vector<pair<int,int>> vec = {{3,1},{2,1},{7,1},{5,2}};
+    sort(vec.begin(),vec.end(),compartor);
+    for(auto p : vec){
+        cout<<p.first<<p.second<<endl;
+    }
 
-    stack<int> s1;
-    s1.swap(s);
-    cout<<"s size"<<s.size()<<endl;
-    cout<<"s1 size"<<s1.size()<<endl;
     return 0;
 }
